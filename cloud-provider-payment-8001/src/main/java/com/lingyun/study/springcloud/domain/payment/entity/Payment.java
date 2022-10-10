@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Payment implements Serializable {
+public class Payment implements Serializable,IPayment {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

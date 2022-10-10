@@ -9,11 +9,11 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile project.property('org.springframework.boot.spring-boot-starter-web')
-    compile("org.springframework.boot:spring-boot-starter-actuator:2.7.4")
-    compile ('org.springframework.boot:spring-boot-devtools:2.7.4')
-    implementation 'org.springframework:spring-web:5.3.23'//restTemplate的依赖
-    compile ('cn.hutool:hutool-all:5.1.0')
-}
+//dependencies {
+//    testCompile group: 'junit', name: 'junit', version: '4.12'
+//    compile project.property('org.springframework.boot.spring-boot-starter-web')
+//    compile("org.springframework.boot:spring-boot-starter-actuator:2.7.4")
+//    compile ('org.springframework.boot:spring-boot-devtools:2.7.4')
+//    implementation 'org.springframework:spring-web:5.3.23'//restTemplate的依赖
+//    compile ('cn.hutool:hutool-all:5.1.0')
+//}
