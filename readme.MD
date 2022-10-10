@@ -1,6 +1,10 @@
 ## springCloud学习
 
-根据尚硅谷的springCloud视频教程编写而来，但是做了几个尝试：
+根据尚硅谷的springCloud视频教程编写而来，视频的地址为：
+
+https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
+
+但是做了几个尝试：
 
 1. 从maven转至gradle;
 
@@ -11,5 +15,7 @@
 学前提示：springCloud很多时候是配置和环境出错，所以请留意。
 
 ### 1. [新建工程](https://github.com/YuxingXie/springcloud/blob/master/1.%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B.MD)  
+
+在这一章，我将视频教学中的maven构建工具改为了gradle。
 
 ### 2.支付模块构建
