@@ -1,9 +1,11 @@
 package com.lingyun.study.springcloud.domain.payment.entity;
 
+import com.lingyun.study.springcloud.common.entites.IPayment;
+
 import java.io.Serializable;
 
 
-public class Payment implements Serializable,IPayment {
+public class Payment implements Serializable, IPayment {
 
     private Long id;
 

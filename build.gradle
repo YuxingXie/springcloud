@@ -8,55 +8,26 @@ description = """Maven"""
 
 sourceCompatibility = 1.5
 targetCompatibility = 1.5
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
-}
+//tasks.withType(JavaCompile) {
+//	options.encoding = 'UTF-8'
+//}
 
+//allprojects {
+//    //skips empty jars.
+//    jar {
+//        onlyIf { !sourceSets.main.allSource.files.isEmpty() }
+//    }
+//}
 
 subprojects {
     apply plugin: 'java'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 }
-project(":cloud-provider-payment-8001") {
-//    include 'cloud-consumer-order80'
-//    include 'cloud-project-commons'
-    dependencies {
-        compile project.property('org.springframework.boot.spring-boot-dependencies')
-        compile project.property('org.springframework.cloud.spring-cloud-dependencies')
-        compile project.property('spring-cloud-alibaba-dependencies')
-        compile project.property('org.projectlombok.lombok')
-        compile project.property('com.h2database.h2')
-        compile project.property('org.springframework.boot.spring-boot-starter-web')
-        compile("org.springframework.boot:spring-boot-starter-actuator:2.7.4")
-
-        compile project.property('org.springframework.boot.spring-boot-starter-data-jpa')
-        compile ('org.springframework.boot:spring-boot-devtools:2.7.4')
-        compile ('cn.hutool:hutool-all:5.1.0')
-        testCompile("org.springframework.boot:spring-boot-starter-test:2.7.4")
-    }
-}
-project(":cloud-consumer-order80") {
-//    include 'cloud-project-commons'
-    dependencies {
-        testCompile group: 'junit', name: 'junit', version: '4.12'
-        compile project.property('org.springframework.boot.spring-boot-starter-web')
-        compile("org.springframework.boot:spring-boot-starter-actuator:2.7.4")
-        compile ('org.springframework.boot:spring-boot-devtools:2.7.4')
-        implementation 'org.springframework:spring-web:5.3.23'//restTemplate的依赖
-        compile ('cn.hutool:hutool-all:5.1.0')
-    }
-}
-project(":cloud-project-commons") {
-    dependencies {
-//        testCompile group: 'junit', name: 'junit', version: '4.12'
-//        compile project.property('org.springframework.boot.spring-boot-starter-web')
-//        compile("org.springframework.boot:spring-boot-starter-actuator:2.7.4")
-//        compile ('org.springframework.boot:spring-boot-devtools:2.7.4')
-//        implementation 'org.springframework:spring-web:5.3.23'//restTemplate的依赖
-//        compile ('cn.hutool:hutool-all:5.1.0')
-    }
-}
+//project(":cloud-provider-payment-8001") {
+//}
+//project(":cloud-consumer-order80") {
+//}
 
 
 repositories {

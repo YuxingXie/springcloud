@@ -31,3 +31,13 @@ https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 postman，idea的热部署也不细研究了。
 
 ### 3. [消费者订单模块](https://github.com/YuxingXie/springcloud/blob/master/003.MD)
+
+对应视频12-14小节。
+
+这一章构建了消费者订单模块，知识点主要是restTemplate。
+
+重构的时候gradle与maven，jpa与mybatis产生了巨大的差异。
+
+通过对比，jpa的优越性超过mybatis一百万亿倍，gradle比maven强大约五十万亿倍。
+
+### 4. [Eureka](https://github.com/YuxingXie/springcloud/blob/master/004.MD)
