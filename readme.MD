@@ -14,11 +14,11 @@ https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 
 学前提示：springCloud很多时候是配置和环境出错，所以请留意。
 
-### 1. [新建工程](https://github.com/YuxingXie/springcloud/blob/master/assets/images/001.MD)  
+### 1. [新建工程](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/001.MD)  
 
 在这一章，我将视频教学中的maven构建工具改为了gradle。
 
-### 2. [支付模块构建](https://github.com/YuxingXie/springcloud/blob/master/assets/images/002.MD)
+### 2. [支付模块构建](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/002.MD)
 
 对应视频8-11小节。
 
@@ -30,7 +30,7 @@ https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 
 postman，idea的热部署也不细研究了。
 
-### 3. [消费者订单模块](https://github.com/YuxingXie/springcloud/blob/master/assets/images/003.MD)
+### 3. [消费者订单模块](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/003.MD)
 
 对应视频12-14小节。
 
@@ -40,7 +40,7 @@ postman，idea的热部署也不细研究了。
 
 通过对比，jpa的优越性超过mybatis一百万亿倍，gradle比maven强大约五十万亿倍。
 
-### 4. [Eureka](https://github.com/YuxingXie/springcloud/blob/master/assets/images/004.MD)
+### 4. [Eureka](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/004.MD)
 
 现在正式进入springCloud生态了，贴个图先
 
