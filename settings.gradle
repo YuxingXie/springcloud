@@ -1,0 +1,2 @@
+rootProject.name = 'springcloud'
+include 'cloud-provider-payment-8001'
