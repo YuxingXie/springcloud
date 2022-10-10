@@ -41,3 +41,8 @@ postman，idea的热部署也不细研究了。
 通过对比，jpa的优越性超过mybatis一百万亿倍，gradle比maven强大约五十万亿倍。
 
 ### 4. [Eureka](https://github.com/YuxingXie/springcloud/blob/master/004.MD)
+
+现在正式进入springCloud生态了，贴个图先
+
+![](https://github.com/YuxingXie/springcloud/raw/master/assets/images/001.jpg)
+
