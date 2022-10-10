@@ -18,4 +18,12 @@ https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 
 在这一章，我将视频教学中的maven构建工具改为了gradle。
 
-### 2.支付模块构建
+### 2. [支付模块构建](https://github.com/YuxingXie/springcloud/blob/master/2.%E6%94%AF%E4%BB%98%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA.MD)
+
+这一章用gradle和spring-data-jpa重构了作者的maven+spring-data-mabatis组件，所以durid什么的都用不上。
+
+通过对比，我认为jpa的优越性超过mybatis大约一百万亿倍吧。
+
+另外gradle构建的灵活性，可编程序，相比maven,强大约五十万亿倍吧。
+
+postman，idea的热部署也不细讲了。

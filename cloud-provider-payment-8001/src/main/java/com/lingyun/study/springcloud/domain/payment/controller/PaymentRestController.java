@@ -3,10 +3,7 @@ package com.lingyun.study.springcloud.domain.payment.controller;
 import com.lingyun.study.springcloud.common.CommonResult;
 import com.lingyun.study.springcloud.domain.payment.entity.Payment;
 import com.lingyun.study.springcloud.domain.payment.service.PaymentService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/payment")
@@ -17,10 +14,17 @@ public class PaymentRestController {
         this.paymentService = paymentService;
     }
 
+    @PostMapping("/create")
+    public CommonResult<Payment> create(@RequestBody Payment payment){
+        payment = paymentService.save(payment);
+        return new CommonResult<>(200,"插入成功",payment);
+    }
     @GetMapping("/detail/{id}")
     public CommonResult<Payment> findById(@PathVariable Long id){
         Payment payment = paymentService.findEntityById(id);
-
+        if (payment==null){
+            return new CommonResult<>(404,"没有相关记录",null);
+        }
         return new CommonResult<>(200,null,payment);
     }
 }
