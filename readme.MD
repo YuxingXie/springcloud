@@ -46,3 +46,6 @@ postman，idea的热部署也不细研究了。
 
 ![](https://github.com/YuxingXie/springcloud/raw/master/assets/images/001.jpg)
 
+知识点：
+
+* 分布式CAP理论
