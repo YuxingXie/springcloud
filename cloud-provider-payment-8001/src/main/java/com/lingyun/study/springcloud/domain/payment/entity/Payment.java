@@ -1,12 +1,13 @@
 package com.lingyun.study.springcloud.domain.payment.entity;
 
+import com.lingyun.study.springcloud.common.entites.IPayment;
 import com.lingyun.study.springcloud.domain.payment.service.PaymentService;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Payment implements Serializable,IPayment {
+public class Payment implements Serializable, IPayment {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

@@ -3,7 +3,7 @@ package com.lingyun.study.springcloud.domain.payment.entity;
 import java.io.Serializable;
 
 
-public class Payment implements Serializable {
+public class Payment implements Serializable,IPayment {
 
     private Long id;
 
