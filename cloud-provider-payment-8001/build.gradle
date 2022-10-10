@@ -17,12 +17,11 @@ dependencies {
     compile project.property('spring-cloud-alibaba-dependencies')
     compile project.property('org.projectlombok.lombok')
     compile project.property('com.h2database.h2')
-//    compile project.property('com.alibaba.druid.druid')
     compile project.property('org.springframework.boot.spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-actuator:2.7.4")
 
     compile project.property('org.springframework.boot.spring-boot-starter-data-jpa')
-    compile("org.springframework.boot:spring-boot-starter-actuator:2.7.4")
     compile ('org.springframework.boot:spring-boot-devtools:2.7.4')
-
+    compile ('cn.hutool:hutool-all:5.1.0')
     testCompile("org.springframework.boot:spring-boot-starter-test:2.7.4")
 }
