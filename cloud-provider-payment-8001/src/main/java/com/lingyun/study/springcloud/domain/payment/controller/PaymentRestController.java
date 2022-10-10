@@ -20,6 +20,7 @@ public class PaymentRestController {
     @GetMapping("/detail/{id}")
     public CommonResult<Payment> findById(@PathVariable Long id){
         Payment payment = paymentService.findEntityById(id);
+
         return new CommonResult<>(200,null,payment);
     }
 }

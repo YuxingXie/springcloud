@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
-public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> implements JpaRepository<T,ID> {
+public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends CommonRepository<T, ID> implements JpaRepository<T,ID>  {
     private R repository;
     public CommonService(R repository) {
         this.repository = repository;
