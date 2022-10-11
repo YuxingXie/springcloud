@@ -1,5 +1,6 @@
 rootProject.name = 'springcloud'
-include ':cloud-provider-payment-8001'
-include ':cloud-consumer-order80'
-include ':cloud-project-commons'
+include 'cloud-provider-payment-8001'
+include 'cloud-consumer-order80'
+include 'cloud-project-commons'
+include 'cloud-eureka-server7001'
 
