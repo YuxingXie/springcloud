@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.FluentQuery;
+//import org.springframework.data.repository.query.FluentQuery;
 
 import java.util.List;
 import java.util.Optional;
@@ -51,10 +51,10 @@ public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends
         repository.delete(entity);
     }
 
-    @Override
-    public void deleteAllById(Iterable<? extends ID> ids) {
-        repository.deleteAllById(ids);
-    }
+//    @Override
+//    public void deleteAllById(Iterable<? extends ID> ids) {
+//        repository.deleteAllById(ids);
+//    }
 
     @Override
     public void deleteAll(Iterable<? extends T> entities) {
@@ -106,20 +106,20 @@ public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends
         return repository.saveAndFlush(entity);
     }
 
-    @Override
-    public <S extends T> List<S> saveAllAndFlush(Iterable<S> entities) {
-        return repository.saveAllAndFlush(entities);
-    }
-
-    @Override
-    public void deleteAllInBatch(Iterable<T> entities) {
-        repository.deleteAllInBatch(entities);
-    }
-
-    @Override
-    public void deleteAllByIdInBatch(Iterable<ID> ids) {
-        repository.deleteAllByIdInBatch(ids);
-    }
+//    @Override
+//    public <S extends T> List<S> saveAllAndFlush(Iterable<S> entities) {
+//        return repository.saveAllAndFlush(entities);
+//    }
+//
+//    @Override
+//    public void deleteAllInBatch(Iterable<T> entities) {
+//        repository.deleteAllInBatch(entities);
+//    }
+//
+//    @Override
+//    public void deleteAllByIdInBatch(Iterable<ID> ids) {
+//        repository.deleteAllByIdInBatch(ids);
+//    }
 
     @Override
     public void deleteAllInBatch() {
@@ -132,16 +132,16 @@ public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends
         return repository.getOne(id);
     }
 
-    @Override
-    @Deprecated
-    public T getById(ID id) {
-        return repository.getById(id);
-    }
-
-    @Override
-    public T getReferenceById(ID id) {
-        return repository.getReferenceById(id);
-    }
+//    @Override
+//    @Deprecated
+//    public T getById(ID id) {
+//        return repository.getById(id);
+//    }
+//
+//    @Override
+//    public T getReferenceById(ID id) {
+//        return repository.getReferenceById(id);
+//    }
 
     @Override
     public <S extends T> Optional<S> findOne(Example<S> example) {
@@ -173,8 +173,8 @@ public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends
         return repository.exists(example);
     }
 
-    @Override
-    public <S extends T, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
-        return repository.findBy(example, queryFunction);
-    }
+//    @Override
+//    public <S extends T, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
+//        return repository.findBy(example, queryFunction);
+//    }
 }

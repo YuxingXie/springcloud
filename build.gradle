@@ -10,7 +10,8 @@ buildscript {
     }
     dependencies {
         //有了这个似乎都不用指定spring-boot相关依赖的版本了
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.4.1")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.1.RELEASE")
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE"
     }
 }
 
@@ -19,7 +20,8 @@ allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
     apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
+    apply plugin: "io.spring.dependency-management"
+    apply plugin: 'maven-publish'
 
     group = 'com.lingyun.study'
     version = '1.0-SNAPSHOT'
@@ -45,9 +47,16 @@ allprojects {
         maven { url "https://nexus.bsdn.org/content/groups/public" }
         google()
     }
-    //dependencies方法不能放在allprojects配置块，要为所有项目配置公共的依赖怎么办？
+    dependencyManagement {
+        imports {
+            mavenBom('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
+            mavenBom('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+            mavenBom('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:2.2.10.RELEASE')
+        }
+    }
     dependencies {
 //        implementation('org.springframework.boot:spring-boot-dependencies')
+        implementation('org.springframework.boot:spring-boot-starter')
         implementation('org.springframework.boot:spring-boot-starter-web')
 
         implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -74,7 +83,7 @@ project(":cloud-eureka-server7001") {
     dependencies {
         implementation project(':cloud-project-commons')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:2.2.10.RELEASE')
-        implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR12')
+        implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
 
     }
 
@@ -89,7 +98,10 @@ project(":cloud-provider-payment-8001") {
     dependencies {
         implementation project(':cloud-project-commons')
         implementation('org.springframework.boot:spring-boot-starter-data-jpa:2.7.4')
+        implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+
+
     }
 
 }
