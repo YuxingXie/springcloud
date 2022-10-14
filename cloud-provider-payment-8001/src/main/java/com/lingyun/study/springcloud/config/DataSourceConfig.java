@@ -15,8 +15,8 @@ public class DataSourceConfig {
         Properties properties = new Properties();
         properties.setProperty("minActive", "10");
         properties.setProperty("maxActive", "200");
-        properties.setProperty("maxIdle", "0");//最大等待连接中的数量，设置为0时，表示没有限制
-        properties.setProperty("maxWait", "0");//最大等待秒数，单位为毫秒， 超过时间会报出错误信息；
+        properties.setProperty("maxIdle", "0");
+        properties.setProperty("maxWait", "0");
         properties.setProperty("removeAbandoned", "true");
         properties.setProperty("removeAbandonedTimeout", "60");
         ds.setConnectionProperties(properties);

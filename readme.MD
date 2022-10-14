@@ -4,7 +4,9 @@
 
 https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 
-但是做了几个尝试：
+本仓库中包含这些视频，如果侵权了可以联系我删掉。
+
+本项目中我做了几个尝试：
 
 1. 从maven转至gradle;
 

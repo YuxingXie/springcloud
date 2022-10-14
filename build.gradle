@@ -1,42 +1,115 @@
-apply plugin: 'java'
-apply plugin: 'maven'
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://repo.maven.apache.org/maven2" }
+        maven { url "https://repo.spring.io/release" }
+        maven { url "https://repository.jboss.org/maven2" }
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://nexus.bsdn.org/content/groups/public" }
+    }
+    dependencies {
+        //有了这个似乎都不用指定spring-boot相关依赖的版本了
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.4.1")
+    }
+}
 
-group = 'com.lingyun.study'
-version = '1.0-SNAPSHOT'
 
-description = """Maven"""
-
-sourceCompatibility = 1.5
-targetCompatibility = 1.5
-//tasks.withType(JavaCompile) {
-//	options.encoding = 'UTF-8'
-//}
-
-//allprojects {
-//    //skips empty jars.
-//    jar {
-//        onlyIf { !sourceSets.main.allSource.files.isEmpty() }
-//    }
-//}
-
-subprojects {
+allprojects {
     apply plugin: 'java'
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-}
-//project(":cloud-provider-payment-8001") {
-//}
-//project(":cloud-consumer-order80") {
-//}
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'com.lingyun.study'
+    version = '1.0-SNAPSHOT'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.maven.apache.org/maven2" }
+        maven { url "https://repo.spring.io/release" }
+        maven { url "https://repository.jboss.org/maven2" }
+        maven { url "https://maven.aliyun.com/repository/public" }
+        mavenCentral()
+        maven { url "https://nexus.bsdn.org/content/groups/public" }
+        google()
+    }
+    //dependencies方法不能放在allprojects配置块，要为所有项目配置公共的依赖怎么办？
+    dependencies {
+//        implementation('org.springframework.boot:spring-boot-dependencies')
+        implementation('org.springframework.boot:spring-boot-starter-web')
+
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
+
+        implementation('org.springframework.boot:spring-boot-devtools')
+
+        implementation("org.springframework.boot:spring-boot-starter-logging")
+
+        implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+        implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+        implementation("com.google.code.gson:gson:2.8.2")
+
+        testImplementation("org.springframework.boot:spring-boot-starter-test")
 
 
-repositories {
-    mavenCentral()
-     maven { url "https://repo.maven.apache.org/maven2" }
-    maven {
-        url "https://repo.spring.io/release"
+
     }
-    maven {
-        url "https://repository.jboss.org/maven2"
+
+}
+
+project(":cloud-eureka-server7001") {
+    dependencies {
+        implementation project(':cloud-project-commons')
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:2.2.10.RELEASE')
+        implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR12')
+
+    }
+
+}
+project(":cloud-consumer-order80") {
+    dependencies {
+        implementation project(':cloud-project-commons')
+        implementation 'org.springframework:spring-web:5.3.23'//restTemplate的依赖
     }
 }
+project(":cloud-provider-payment-8001") {
+    dependencies {
+        implementation project(':cloud-project-commons')
+        implementation('org.springframework.boot:spring-boot-starter-data-jpa:2.7.4')
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+    }
+
+}
+
+
+/**
+ * 根项目只定义项目依赖，不需要源码所以创建一个删除src目录的任务，
+ */
+task deleteSrcDir(type: Delete) {
+    group('lingyun')
+    doFirst {
+        def srcDir = file('src');
+        if (srcDir.exists() && srcDir.directory) {
+            delete 'src'
+            println 'root project src dir deleted...............................'
+        } else {
+            println 'root project src dir dose not exists...............................'
+        }
+        followSymlinks(true)
+    }
+
+}
+//compileJava.dependsOn('deleteSrcDir')

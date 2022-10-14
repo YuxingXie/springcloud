@@ -20,4 +20,7 @@ public class PaymentService extends CommonService<Payment,Long, PaymentRepositor
     public List<Payment> findBySerial(String serial) {
         return this.paymentRepository.findBySerial(serial);
     }
+
+
+
 }
