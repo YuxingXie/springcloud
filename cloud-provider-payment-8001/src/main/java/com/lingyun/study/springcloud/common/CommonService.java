@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
 
 public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends CommonRepository<T, ID> implements JpaRepository<T,ID>  {
     private R repository;
@@ -20,7 +19,10 @@ public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends
     public List<T> findAll() {
         return repository.findAll();
     }
-
+    @Override
+    public void deleteInBatch(Iterable<T> entities) {
+        repository.deleteInBatch(entities);
+    }
     @Override
     public List<T> findAll(Sort sort) {
         return repository.findAll(sort);
