@@ -55,3 +55,7 @@ postman，idea的热部署也不细研究了。
 * 集群的概念
 
 * 掌握如何配置集群
+
+* 服务发现，自我保护
+
+### 4. [zookeeper](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/005.MD)
