@@ -12,7 +12,7 @@ public class OrderRestController {
     public OrderRestController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
-    @PostMapping("/api/consumer/payment/create")
+    @PostMapping("/consumer/payment/create")
     public CommonResult create(@RequestBody Payment payment) {
         return restTemplate.postForEntity(paymentUrl+"/api/payment/create",payment,CommonResult.class).getBody();
     }
