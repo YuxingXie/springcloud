@@ -95,10 +95,19 @@ project(":cloud-eureka-server7001") {
     }
 
 }
+project(":cloud-eureka-server7002") {
+    dependencies {
+        implementation project(':cloud-project-commons')
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:2.2.10.RELEASE')
+        implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
+
+    }
+
+}
 project(":cloud-consumer-order80") {
     dependencies {
         api project(':cloud-project-commons')
-//        implementation 'org.springframework:spring-web:5.3.23'//restTemplate的依赖
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
     }
 }
 project(":cloud-provider-payment-8001") {

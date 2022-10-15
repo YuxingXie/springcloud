@@ -3,4 +3,5 @@ include ':cloud-provider-payment-8001'
 include ':cloud-consumer-order80'
 include ':cloud-project-commons'
 include ':cloud-eureka-server7001'
+include 'cloud-eureka-server7002'
 

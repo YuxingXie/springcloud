@@ -16,7 +16,7 @@ public class OrderRestController {
     public CommonResult create(@RequestBody Payment payment) {
         return restTemplate.postForEntity(paymentUrl+"/api/payment/create",payment,CommonResult.class).getBody();
     }
-    @GetMapping("/api/consumer/payment/detail/{id}")
+    @GetMapping("/consumer/payment/get/{id}")
     public CommonResult findById(@PathVariable Long id){
         return restTemplate.getForEntity(paymentUrl+"/api/payment/detail/"+id,CommonResult.class).getBody();
     }

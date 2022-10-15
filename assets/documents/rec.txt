@@ -1,0 +1,6 @@
+a)	5年以上JAVA WEB开发经验，有电商、出行、物流、公交、环卫领域项目开发经验者优先；
+b)	精通spring、spring boot、spring cloud、Mybatis等框架；
+c)	精通Redis、kafka、RabbitMQ等中间件技术；
+d)	熟悉jenkins + docker + k8s持续集成及自动化部署技术
+e)	熟练使用 IDEA，GitLab，Maven 等常用开发工具；
+f)	具备良好的沟通及引导能力，对项目实施过程所产生的风险能够提前预测和分析；
