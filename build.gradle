@@ -117,8 +117,17 @@ project(":cloud-provider-payment-8001") {
         implementation('org.springframework.boot:spring-boot-starter-data-jpa')
         implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+    }
 
+}
 
+project(":cloud-provider-payment8002") {
+    dependencies {
+        api project(':cloud-project-commons')
+        implementation 'com.h2database:h2:1.4.196'
+        implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+        implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
     }
 
 }
