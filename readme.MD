@@ -6,8 +6,7 @@ https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 
 本仓库中包含这些视频，如果侵权了可以联系我删掉。
 
-
-
+有些简单章节没有深究，毕竟入门为先。
 
 
 ### 1. [前置工作](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/001.MD)
@@ -107,4 +106,11 @@ feign.Logger.Lever的bean
 logger.level.xxxxx.xxxx.xxxxx.XxxService=debug
 
 
-### 7. [OpenFHystrixeign](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/009.MD)
+### 7. [Hystrix断路器](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/009.MD)
+
+听说这章很重要，不摸鱼认真搞。
+
+概念：
+
+* 降级
+* 熔断
