@@ -59,3 +59,20 @@ postman，idea的热部署也不细研究了。
 * 服务发现，自我保护
 
 ### 4. [zookeeper](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/005.MD)
+
+因为以学习为主，所以服务注册中心eureka,zookeeper,consul先搞懂eureka，其它的有时间再学。
+所以先掠过，章节保留。
+
+### 5. [consul](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/006.MD)
+
+### 6. [Ribbon](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/007.MD)
+
+对应视频36-42 。
+
+比较简单，知道它是做服务调用、负载均衡的，并知道有哪些负载均衡策略，掌握LoadBalancer接口实现自定义负载均衡即可。
+
+所以简单快速看一遍视频，不深入先。
+
+### 7. [OpenFeign](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/008.MD)
+
+
