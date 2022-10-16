@@ -6,7 +6,13 @@ https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 
 本仓库中包含这些视频，如果侵权了可以联系我删掉。
 
-本项目中我做了几个尝试：
+
+
+
+
+### 1. [前置工作](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/001.MD)
+
+本学习项目中我做了几个尝试：
 
 1. 从maven转至gradle;
 
@@ -16,11 +22,15 @@ https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 
 学前提示：springCloud很多时候是配置和环境出错，所以请留意。
 
-### 1. [新建工程](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/001.MD)  
+这一章是搭建过程。
+  
+#### 1.1 [新建工程](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/001.MD)  
 
-在这一章，我将视频教学中的maven构建工具改为了gradle。
+，我将按照视频搭建一个project和它的若干subproject。
 
-### 2. [支付模块构建](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/002.MD)
+
+
+#### 1.2. [支付模块构建](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/002.MD)
 
 对应视频8-11小节。
 
@@ -32,7 +42,7 @@ https://www.youtube.com/playlist?list=PLmOn9nNkQxJGVG1ktTV4SedFWuyef_Pi0
 
 postman，idea的热部署也不细研究了。
 
-### 3. [消费者订单模块](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/003.MD)
+#### 1.3. [消费者订单模块](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/003.MD)
 
 对应视频12-14小节。
 
@@ -42,7 +52,7 @@ postman，idea的热部署也不细研究了。
 
 通过对比，jpa的优越性超过mybatis一百万亿倍，gradle比maven强大约五十万亿倍。
 
-### 4. [Eureka](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/004.MD)
+### 2. [Eureka](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/004.MD)
 
 现在正式进入springCloud生态了，贴个图先
 
@@ -58,14 +68,14 @@ postman，idea的热部署也不细研究了。
 
 * 服务发现，自我保护
 
-### 4. [zookeeper](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/005.MD)
+### 3. [zookeeper](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/005.MD)
 
 因为以学习为主，所以服务注册中心eureka,zookeeper,consul先搞懂eureka，其它的有时间再学。
 所以先掠过，章节保留。
 
-### 5. [consul](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/006.MD)
+### 4. [consul](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/006.MD)
 
-### 6. [Ribbon](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/007.MD)
+### 5. [Ribbon](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/007.MD)
 
 对应视频36-42 。
 
@@ -73,6 +83,28 @@ postman，idea的热部署也不细研究了。
 
 所以简单快速看一遍视频，不深入先。
 
-### 7. [OpenFeign](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/008.MD)
+### 6. [OpenFeign](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/008.MD)
+
+这一章较简单，为快速学习，不做代码研究，但还是要了解一些基本概念和操作。
+
+OpenFeign可理解为Ribbon+RestTemplate的综合组件。以前80调用8001时，80是通过restTemplate访问8001的url或服务名实现的，
+OpenFeign将其抽象为了接口。实现也很容易，interface注册为bean并增加@FeignClient注解。所以现在微服务之间的调用
+从http直接调用方式变成了接口访问的方式，但底层实质还是http访问。
+
+服务层(service)访问数据访问层(dao)也可以用OpenFeign实现。
+
+超时控制与日志增强也快速浏览一遍。
+
+* 超时设置：
+```properties
+ribbon.ReadTimeout=5000
+ribbon.ConnectTimeout=5000
+```
+* 日志增强：
+
+feign.Logger.Lever的bean
+
+logger.level.xxxxx.xxxx.xxxxx.XxxService=debug
 
 
+### 7. [OpenFHystrixeign](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/009.MD)
