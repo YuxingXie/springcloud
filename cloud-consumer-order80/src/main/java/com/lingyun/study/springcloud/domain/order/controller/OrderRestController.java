@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 @RestController
 public class OrderRestController {
 //    private final String paymentUrl="http://localhost:8001";
-    private final String paymentUrl="http://CLOUD-PAYMENT-SERVICE";
+    private final String paymentUrl="http://CLOUD-PAYMENT-SERVICE";//这个地址是不对微服务之外的程序开放的，直接浏览器输入地址无法访问
     private RestTemplate restTemplate;
     public OrderRestController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;

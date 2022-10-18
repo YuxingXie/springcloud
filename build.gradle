@@ -108,6 +108,8 @@ project(":cloud-consumer-order80") {
     dependencies {
         api project(':cloud-project-commons')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+        implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:2.2.7.RELEASE'
     }
 }
 project(":cloud-provider-payment-8001") {
@@ -117,6 +119,7 @@ project(":cloud-provider-payment-8001") {
         implementation('org.springframework.boot:spring-boot-starter-data-jpa')
         implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+
     }
 
 }
