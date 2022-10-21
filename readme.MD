@@ -114,3 +114,6 @@ logger.level.xxxxx.xxxx.xxxxx.XxxService=debug
 
 * 降级
 * 熔断
+
+
+### 8. [GateWay](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/010.MD)

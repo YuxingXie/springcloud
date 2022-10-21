@@ -10,6 +10,7 @@ import com.netflix.hystrix.contrib.javanica.conf.HystrixPropertiesManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @RestController
@@ -56,8 +57,10 @@ public class PaymentRestController {
             @HystrixProperty(name = HystrixPropertiesManager.CIRCUIT_BREAKER_SLEEP_WINDOW_IN_MILLISECONDS,value = "10000"),
             @HystrixProperty(name = HystrixPropertiesManager.CIRCUIT_BREAKER_ERROR_THRESHOLD_PERCENTAGE,value = "60"),
     })
+    @GetMapping("/breaker/detail/{id}")
     public CommonResult<Payment> testCircuitBreaker(@PathVariable Long id){
         if (id<0){
+            System.out.println("--------------------- throw exception -----------------");
             throw new RuntimeException("--------------------- id can't be negative-----------------");
         }
         String serialNumber = IdUtil.simpleUUID();
@@ -65,7 +68,7 @@ public class PaymentRestController {
     }
     public CommonResult<Payment> testCircuitBreakerFallback(@PathVariable Long id){
 
-        return new CommonResult<>(444,"id "+id+" can't be negative");
+        return new CommonResult<>(444,"id "+id+" can't be negative,"+ UUID.randomUUID().toString());
     }
 
     // 熔断----end
