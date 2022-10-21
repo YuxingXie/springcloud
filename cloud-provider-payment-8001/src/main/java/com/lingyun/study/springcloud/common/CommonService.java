@@ -10,7 +10,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends CommonRepository<T, ID> implements JpaRepository<T,ID>  {
+//public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends CommonRepository<T, ID> implements JpaRepository<T,ID>  {
+public abstract class CommonService<T,ID,R extends JpaRepository<T, ID>> extends CommonRepository<T, ID,R> implements ICommonService<T,ID>  {
     private R repository;
     public CommonService(R repository) {
         this.repository = repository;

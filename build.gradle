@@ -78,9 +78,9 @@ allprojects {
 
         implementation("com.google.code.gson:gson:2.8.2")
 
+        implementation("cn.hutool:hutool-all:5.1.0")
+
         testImplementation("org.springframework.boot:spring-boot-starter-test")
-
-
 
     }
 
@@ -107,9 +107,10 @@ project(":cloud-eureka-server7002") {
 project(":cloud-consumer-order80") {
     dependencies {
         api project(':cloud-project-commons')
-        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
         implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-//        implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:2.2.7.RELEASE'
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+
+        implementation 'org.springframework.cloud:spring-cloud-starter-hystrix:1.4.7.RELEASE'
     }
 }
 project(":cloud-provider-payment-8001") {
@@ -119,6 +120,12 @@ project(":cloud-provider-payment-8001") {
         implementation('org.springframework.boot:spring-boot-starter-data-jpa')
         implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+        //@HystrixCommand
+        implementation 'org.springframework.cloud:spring-cloud-starter-hystrix:1.4.7.RELEASE'
+
+//        implementation 'org.aspectj:aspectjrt:1.7.1'
+//        implementation 'org.aspectj:aspectjweaver:1.7.1'
+//        implementation 'org.springframework:spring-aspects'
 
     }
 
@@ -131,6 +138,7 @@ project(":cloud-provider-payment8002") {
         implementation('org.springframework.boot:spring-boot-starter-data-jpa')
         implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+
     }
 
 }
