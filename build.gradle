@@ -64,9 +64,6 @@ allprojects {
     dependencies {
 //        implementation('org.springframework.boot:spring-boot-dependencies')
         implementation('org.springframework.boot:spring-boot-starter')
-        implementation('org.springframework.boot:spring-boot-starter-web')
-
-        implementation("org.springframework.boot:spring-boot-starter-actuator")
 
         implementation('org.springframework.boot:spring-boot-devtools')
 
@@ -92,6 +89,7 @@ project(":cloud-eureka-server7001") {
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:2.2.10.RELEASE')
         implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
 
+
     }
 
 }
@@ -109,6 +107,8 @@ project(":cloud-consumer-order80") {
         api project(':cloud-project-commons')
         implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+//        implementation('org.springframework.boot:spring-boot-starter-web')
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
 
         implementation 'org.springframework.cloud:spring-cloud-starter-hystrix:1.4.7.RELEASE'
     }
@@ -117,6 +117,9 @@ project(":cloud-provider-payment-8001") {
     dependencies {
         api project(':cloud-project-commons')
         implementation 'com.h2database:h2:1.4.196'
+//        implementation('org.springframework.boot:spring-boot-starter-web')
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
+
         implementation('org.springframework.boot:spring-boot-starter-data-jpa')
         implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
@@ -135,12 +138,32 @@ project(":cloud-provider-payment8002") {
     dependencies {
         api project(':cloud-project-commons')
         implementation 'com.h2database:h2:1.4.196'
+//        implementation('org.springframework.boot:spring-boot-starter-web')
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
+
         implementation('org.springframework.boot:spring-boot-starter-data-jpa')
         implementation('org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE')
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
 
     }
 
+}
+project(":cloud-gateway-gateway9527") {
+
+    dependencies {
+//        api project(':cloud-project-commons')
+        implementation('org.springframework.cloud:spring-cloud-starter-gateway')
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+        implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    }
+    configurations.implementation {
+        exclude(group:'org.apache.tomcat.embed',module:'tomcat-embed-core')
+        exclude(group:'org.apache.tomcat.embed',module:'tomcat-embed-el')
+        exclude(group:'org.apache.tomcat.embed',module:'tomcat-embed-websocket')
+        exclude(group:'org.springframework',module:'spring-webmvc')
+        exclude(group:'org.springframework.boot',module:'spring-boot-starter-tomcat')
+
+    }
 }
 
 

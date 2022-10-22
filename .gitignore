@@ -1,7 +1,7 @@
 # Project exclude paths
 /.gradle/
-/cloud-provider-payment-8001/build/
-/cloud-provider-payment-8001/build/classes/java/main/
+/cloud-provider-order-8001/build/
+/cloud-provider-order-8001/build/classes/java/main/
 .idea
 *.iml
 /gradle/wrapper/gradle-wrapper.jar
