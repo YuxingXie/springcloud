@@ -36,11 +36,7 @@ public class OrderRestController {
             @HystrixProperty(name = HystrixPropertiesManager.EXECUTION_ISOLATION_THREAD_TIMEOUT_IN_MILLISECONDS,value = "3000")
     })
     public CommonResult<Order> findById(@PathVariable Long id){
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         Order order = orderService.findEntityById(id);
         if (order ==null){
             return new CommonResult<>(404,"没有相关记录",null);
