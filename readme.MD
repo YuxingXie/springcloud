@@ -118,4 +118,9 @@ logger.level.xxxxx.xxxx.xxxxx.XxxService=debug
 
 ### 8. [GateWay](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/010.MD)
 
+* 搭建及依赖
+* route
+* Predicate
+* Filter
 
+### 8. [Config分布式配置中心](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/011.MD)
