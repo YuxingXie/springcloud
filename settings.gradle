@@ -6,4 +6,6 @@ include ':cloud-eureka-server7001'
 include 'cloud-eureka-server7002'
 include 'cloud-provider-payment8002'
 include 'cloud-gateway-gateway9527'
+include 'cloud-config-center-3344'
+include 'cloud-config-client-3355'
 

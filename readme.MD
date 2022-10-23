@@ -124,3 +124,15 @@ logger.level.xxxxx.xxxx.xxxxx.XxxService=debug
 * Filter
 
 ### 8. [Config分布式配置中心](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/011.MD)
+
+* 作者认为Config vs Nacos,Nacos win!但基于对springframework的信任，我会认真学习spring-cloud-config。
+
+config server的GitHub仓库地址：https://github.com/YuxingXie/study-spring-cloud-config。
+
+### 8. [Bus消息总线](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/012.MD)
+
+进入这一章，首先是为了解决上一章Config中gitHub配置修改后客户端无法完美自动获取更新的问题。
+
+springCloud Config配合springCloud Bus是常见的组合。
+
+Bus支持RabbitMQ和Kafka两种消息代理。
