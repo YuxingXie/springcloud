@@ -8,4 +8,5 @@ include 'cloud-provider-payment8002'
 include 'cloud-gateway-gateway9527'
 include 'cloud-config-center-3344'
 include 'cloud-config-client-3355'
+include 'cloud-config-client-3366'
 
