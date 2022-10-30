@@ -137,3 +137,6 @@ springCloud Config配合springCloud Bus是常见的组合。
 
 Bus支持RabbitMQ和Kafka两种消息代理。
 
+### 11. [Stream](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/013.MD)
+
+统一的MQ编程接口，类似于JPA,Hibernate之于各种数据库产品。
