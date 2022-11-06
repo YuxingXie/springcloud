@@ -7,15 +7,13 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.SubscribableChannel;
 //Barista n. 咖啡师；咖啡吧员
 public interface Barista {
-    @Input
+    //@Input应该缺少相应的消费者的配置，所以启动报错，暂时注释一下
+    @Input("orders")
     SubscribableChannel orders();
 
-    @Output
+    @Output("hotDrinks")
     MessageChannel hotDrinks();
 
-    @Output
+    @Output("coldDrinks")
     MessageChannel coldDrinks();
-
-
-
 }
