@@ -172,6 +172,13 @@ project(":cloud-config-client-3366") {
         implementation("org.springframework.boot:spring-boot-starter-actuator")
     }
 }
+project(":cloud-stream-rabbitmq-provider8801") {
+    dependencies {
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.10.RELEASE')
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
+        implementation("org.springframework.cloud:spring-cloud-starter-stream-rabbit")
+    }
+}
 project(":cloud-gateway-gateway9527") {
 
     dependencies {
