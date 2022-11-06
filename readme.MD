@@ -74,6 +74,9 @@ postman，idea的热部署也不细研究了。
 
 ### 4. [consul](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/006.MD)
 
+因为以学习为主，所以服务注册中心eureka,zookeeper,consul先搞懂eureka，其它的有时间再学。
+所以先掠过，章节保留。
+
 ### 5. [Ribbon](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/007.MD)
 
 对应视频36-42 。
