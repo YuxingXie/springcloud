@@ -140,3 +140,13 @@ Bus支持RabbitMQ和Kafka两种消息代理。
 ### 11. [Stream](https://github.com/YuxingXie/springcloud/blob/master/assets/mds/013.MD)
 
 统一的MQ编程接口，类似于JPA,Hibernate之于各种数据库产品。
+
+此章请勿跟着原视频学习，follow me!
+
+### 12. Sleuth &zipkin:链路监控
+
+过于简单，直接看视频吧。
+
+########################################################################################
+现在基于springCloud netflix的微服务框架学习完成。后续的springCloud alibaba就不算入门而算进阶了，所以不再学习了。
+相信有了现在的基础应该不会太难了吧。
